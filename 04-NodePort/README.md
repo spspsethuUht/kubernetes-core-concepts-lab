@@ -1,34 +1,37 @@
-NodePort Service Lab
-Objective
-Expose an application outside the cluster using a NodePort.
+# NodePort Service Lab
 
-Create
+## Objective
+
+Learn how to expose applications outside the Kubernetes cluster using a NodePort service.
+
+## Components
+
+- Deployment
+- NodePort Service
+
+## Deploy
+
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
-Verify
-Shell
+## Verify
+
 kubectl get svc
- 
 
 Expected:
 
-Plain Text
-TYPE NodePort
-PORT(S) 80:30080/TCP
-Access Application
-Shell
+Type = NodePort
+
+## Test
+
 minikube service nodeport-service --url
 
-Open browser.
+Open the displayed URL in a browser.
 
-Expected:
+Expected Result:
 
-HTML
 Welcome to nginx!
-Cleanup
-Shell
+
+## Cleanup
+
 kubectl delete -f .
-
----
-
