@@ -1,1 +1,39 @@
---- # 03-loadbalancer/notes.md ```markdown # Notes ## What is LoadBalancer? Creates an external load balancing endpoint. In Cloud: - AWS ELB - Azure Load Balancer - GCP Load Balancer In Minikube: Use: ```bash minikube tunnel
+# LoadBalancer Notes
+
+## What is LoadBalancer?
+
+LoadBalancer provides external access to applications running inside Kubernetes.
+
+Cloud providers automatically create and manage the load balancer.
+
+## Examples
+
+- AWS Load Balancer
+- Azure Load Balancer
+- Google Cloud Load Balancer
+
+## Traffic Flow
+
+Client
+
+↓
+
+Load Balancer
+
+↓
+
+Service
+
+↓
+
+Pod
+
+## Minikube Requirement
+
+Minikube requires:
+
+minikube tunnel
+
+## Key Takeaway
+
+LoadBalancer is the preferred method for exposing production applications in cloud environments.
