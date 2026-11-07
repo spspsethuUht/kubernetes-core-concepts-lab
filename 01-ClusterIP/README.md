@@ -1,8 +1,5 @@
----
 
-# 01-clusterip/README.md
 
-```markdown
 # ClusterIP Service Lab
 
 ## Objective
@@ -16,7 +13,7 @@ Expose an application internally within the Kubernetes cluster using a ClusterIP
 
 ## Create Resources
 
-```bash
+
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
@@ -46,5 +43,4 @@ Cleanup
 Shell
 kubectl delete -f .
 
----
 
