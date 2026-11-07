@@ -1,23 +1,39 @@
-LoadBalancer Service Lab
-Objective
-Expose services externally using a LoadBalancer.
+# LoadBalancer Service Lab
 
-Create
+## Objective
+
+Learn how to expose applications externally using a LoadBalancer service.
+
+## Components
+
+- Deployment
+- LoadBalancer Service
+
+## Deploy
+
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
+## Start Tunnel
 
-Start Tunnel
-Shell
 minikube tunnel
-Verify
-Shell
+
+## Verify
+
 kubectl get svc
 
 Expected:
 
-Plain Text
-EXTERNAL-IP assigned
-Test
-Shell
-curl http://EXTERNAL-IP
+External IP Assigned
+
+## Test
+
+curl http://<external-ip>
+
+Expected Result:
+
+Welcome to nginx!
+
+## Cleanup
+
+kubectl delete -f .
