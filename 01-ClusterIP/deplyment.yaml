@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-clusterip
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-clusterip
+  template:
+    metadata:
+      labels:
+        app: nginx-clusterip
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+
+
+/*
+Test
+Shell
+kubectl apply -f .
+ 
+kubectl get svc
+ 
+kubectl run testpod --image=busybox -it --rm -- sh
+ 
+wget -qO- http://clusterip-service
+ 
+
+Expected:
+
+HTML
+Welcome to nginx
+*/
+

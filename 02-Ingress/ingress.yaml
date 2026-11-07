@@ -1,0 +1,72 @@
+#Enable ingress:
+
+#Shell
+#minikube addons enable ingress
+
+deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx 
+ ---
+ apiVersion: v1
+ kind: Service
+ metadata:
+   name: web-service
+ spec:
+   selector:
+     app: web
+   ports:
+  - port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+spec:
+  rules:
+  - host: myapp.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-service
+            port:
+              number: 80
+              
+/*
+
+Test
+
+Edit hosts file:
+
+Plain Text
+127.0.0.1 myapp.local
+
+Run:
+
+Shell
+minikube tunnel
+
+Open:
+
+Plain Text
+http://myapp.local
+
+*/
+       

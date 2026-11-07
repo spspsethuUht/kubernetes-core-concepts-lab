@@ -1,0 +1,1 @@
+--- # 04-ingress/notes.md ```markdown # Notes ## What is Ingress? Ingress provides Layer-7 routing. Supports: - Host Based Routing - Path Based Routing - SSL Termination Examples: api.company.com shop.company.com blog.company.com ## Benefits - Single Entry Point - Cost Reduction - URL Routing ## Verify kubectl get ingress kubectl describe ingress

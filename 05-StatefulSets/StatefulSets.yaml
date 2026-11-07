@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx-stateful
+spec:
+  serviceName: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-stateful
+  template:
+    metadata:
+      labels:
+        app: nginx-stateful
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        
+        
+  /*
+  Verify
+  Shell
+  kubectl get pods
+  
+  Pods appear as:
+  
+  Plain Text
+  nginx-stateful-0
+  nginx-stateful-1
+  nginx-stateful-2
+  
+  Delete:
+  
+  Shell
+kubectl delete pod nginx-stateful-1
+*/

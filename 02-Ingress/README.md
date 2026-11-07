@@ -1,0 +1,1 @@
+# 04-ingress/README.md ```markdown # Ingress Lab ## Objective Route HTTP traffic to services using Ingress. ## Enable Ingress ```bash minikube addons enable ingress

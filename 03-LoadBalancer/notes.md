@@ -1,0 +1,1 @@
+--- # 03-loadbalancer/notes.md ```markdown # Notes ## What is LoadBalancer? Creates an external load balancing endpoint. In Cloud: - AWS ELB - Azure Load Balancer - GCP Load Balancer In Minikube: Use: ```bash minikube tunnel
