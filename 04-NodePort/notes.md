@@ -1,1 +1,40 @@
---- # 02-nodeport/notes.md ```markdown # Notes ## What is NodePort? NodePort exposes an application externally through a port on every node. Default Range: 30000-32767 ## Real World Usage - Lab Environments - Testing - Development ## Flow User | NodeIP:30080 | NodePort Service | Pod ## Verification kubectl get svc kubectl describe svc nodeport-service
+# NodePort Notes
+
+## What is NodePort?
+
+NodePort exposes an application externally through a port on every node.
+
+The default NodePort range is:
+
+30000 - 32767
+
+## Traffic Flow
+
+Browser
+
+↓
+
+NodeIP:NodePort
+
+↓
+
+Service
+
+↓
+
+Pod
+
+## Use Cases
+
+- Testing
+- Development
+- Small Environments
+
+## Advantages
+
+- Easy External Access
+- No Additional Load Balancer Needed
+
+## Key Takeaway
+
+NodePort is simple and commonly used in labs and development environments.
