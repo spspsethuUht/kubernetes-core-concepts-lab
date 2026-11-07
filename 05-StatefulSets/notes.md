@@ -1,1 +1,1 @@
---- # 05-statefulset/notes.md ```markdown # Notes ## What is StatefulSet? StatefulSet manages applications requiring: - Stable Network Identity - Stable Storage - Ordered Deployment - Ordered Scaling ## Examples - MySQL - PostgreSQL - MongoDB - Kafka - Elasticsearch ## Pod Names stateful-app-0 stateful-app-1 stateful-app-2 ## Deployment vs StatefulSet Deployment: - Random Pod Names - Stateless StatefulSet: - Fixed Pod Names - Stateful
+<img width="1404" height="2268" alt="image" src="https://github.com/user-attachments/assets/24968ba6-3b61-414d-83bb-e79455d3bbb0" />
